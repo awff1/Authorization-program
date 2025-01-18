@@ -11,15 +11,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.print("Введите логин или введите 'exit' для выхода: ");
+            System.out.print("Enter login or type 'exit' to exit: ");
             String login = scanner.nextLine();
 
             if (login.equalsIgnoreCase("exit")) {
-                System.out.println("Программа завершена, будем ждать вас! ");
+                System.out.println("The program is over, buy");
                 break;
             }
 
-            System.out.print("Введите пароль: ");
+            System.out.print("Enter password: ");
             String password = scanner.nextLine();
 
             try {
@@ -28,13 +28,13 @@ public class Main {
                 if (role != null) {
                     Tools.displayMenu(role);
                 } else {
-                    System.out.println("Неправильный логин или пароль, попробуйте еще раз!\n");
+                    System.out.println("Incorrect login or password, try again!\n");
                 }
 
             } catch (WrongLoginException e) {
-                System.out.println("Ошибка: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
             } catch (WrongPasswordException e) {
-                System.out.println("Ошибка: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
             }
 
         }

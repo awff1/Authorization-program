@@ -1,11 +1,11 @@
 public class Tools {
     public static Role userCheck(String login, String password) throws WrongLoginException, WrongPasswordException {
         if (!isValidLogin(login)) {
-            throw new WrongLoginException("Login должен содержать не менее 20 символов: латинскиx букв прописных и строчных, цифр и символов @ . _ -\n\n");
+            throw new WrongLoginException("The login must contain at least 20 characters: uppercase and lowercase Latin letters, numbers and @ symbols. _ -\n\n");
         }
 
         if (!isValidPassword(password)) {
-            throw new WrongPasswordException("Password должен содержать не менее 8 символов: латинские буквы, цифры и {}[](),.;&?!_-+\n");
+            throw new WrongPasswordException("Password must contain at least 8 characters: Latin letters, numbers and {}[](),.;&?!_-+\n");
         }
 
         if (login.equals(Main.userAdmin.login) && password.equals(Main.userAdmin.password)) {
